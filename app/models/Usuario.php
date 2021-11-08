@@ -25,6 +25,17 @@ class Usuario
 		return $this->db->getError();
 	}
 
+	public function createUser($username, $nombre, $apellido, $email, $pass)
+	{
+		try {
+			$this->db->query("INSERT INTO usuarios (username, nombre, apellido, email, password) VALUES ($username, $nombre, $apellido, $email, $pass)");
+			$this->db->execute();
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+		
+	}
+
 }
 
 ?>

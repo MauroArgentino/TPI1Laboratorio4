@@ -20,21 +20,27 @@
         <div id="signup">   
           <h1>Regístrate Gratis</h1>
           
-          <form action="/" method="post">
+          <form action="<?php echo URL_PATH.'/LoginController/register';?>" method="POST">
           
+          <div class="field-wrap">
+           <!--  <label>
+              Set A Password<span class="req">*</span>
+            </label> -->
+            <input type="text" required autocomplete="off" placeholder="Ingresa un nombre de usuario" name="username" />
+          </div>
           <div class="top-row">
             <div class="field-wrap">
               <!-- <label>
                 Primer nombre<span class="req">*</span>
               </label> -->
-              <input type="text" required placeholder="Primer nombre" />
+              <input type="text" required placeholder="Primer nombre" name="nombre" />
             </div>
         
             <div class="field-wrap">
              <!--  <label>
                 Apellido<span class="req">*</span>
               </label> -->
-              <input type="text"required autocomplete="off"/>
+              <input type="text"required autocomplete="off" placeholder="Apellido" name="apellido" />
             </div>
           </div>
 
@@ -42,14 +48,14 @@
             <!-- <label>
               Correo electrónico<span class="req">*</span>
             </label> -->
-            <input type="email"required autocomplete="off" placeholder="Correo electrónico" />
+            <input type="email"required autocomplete="off" placeholder="Correo electrónico" name="email" />
           </div>
           
           <div class="field-wrap">
            <!--  <label>
               Set A Password<span class="req">*</span>
             </label> -->
-            <input type="password" required autocomplete="off" placeholder="Ingresa una contraseña"/>
+            <input type="password" required autocomplete="off" placeholder="Ingresa una contraseña" name="password" />
           </div>
 
           <div class="field-wrap">
