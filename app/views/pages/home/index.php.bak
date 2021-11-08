@@ -1,0 +1,49 @@
+<?php require APP_PATH. '/views/inc/home/header.php'; ?>
+        <div class='container'>
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">May the 4th Be With You</h1>
+
+
+      <ul>
+        <li class="col-md-3">
+          <div class='front'></div>
+          <div class='back'>
+            <img src='http://morestarwars.com/wp-content/uploads/2017/03/x-wing-gif.gif'>
+          </div>
+        </li>
+        <li class="col-md-3">
+          <div class='front'></div>
+          <div class='back'>
+            <img src='https://media.giphy.com/media/6QcwCXbbavxVC/giphy.gif'>
+          </div>
+        </li>
+        <li class="col-md-3">
+          <div class='front'></div>
+          <div class='back'>
+            <img src='https://cdn.dribbble.com/users/363484/screenshots/1501204/stormtrooperdrbl2.gif'>
+          </div>
+        </li>
+        <li class="col-md-3">
+          <div class='front'></div>
+          <div class='back'>
+            <img src='https://media.giphy.com/media/6QcwCXbbavxVC/giphy.gif'>
+          </div>
+        </li>
+        <li class="col-md-3">
+          <div class='front'></div>
+          <div class='back'>
+            <img src='https://cdn.dribbble.com/users/363484/screenshots/1501204/stormtrooperdrbl2.gif'>
+          </div>
+        </li>
+        <li class="col-md-3">
+          <div class='front'></div>
+          <div class='back'>
+            <img src='http://morestarwars.com/wp-content/uploads/2017/03/x-wing-gif.gif'>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<?php require APP_PATH. '/views/inc/home/footer.php'; 
