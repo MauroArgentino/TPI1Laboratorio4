@@ -9,12 +9,11 @@
 
 	spl_autoload_register(function($nombreClase){
 
-		require_once 'libraries/'.$nombreClase.'.php';
-		// if (is_file('laboratorio4/tpi1/app/libraries/$nombreClase.php')) {
-		// 	require_once 'laboratorio4/tpi1/app/libraries/'.$nombreClase.'.php';
-		// } else {
-		// 	echo "No se pudo encontrar la clase $nombreClase";
-		// }
+		if (is_file('../app/libraries/'.$nombreClase.'.php')) {
+			require_once '../app/libraries/'.$nombreClase.'.php';
+		} else {
+			echo "No se pudo encontrar la clase $nombreClase";
+		}
 		
 	});
 
