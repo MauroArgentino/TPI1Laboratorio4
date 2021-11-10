@@ -5,29 +5,37 @@
 	 */
 	abstract class Controller
 	{
+		private $view;
 
-		function __construct()
+		public function __construct()
 		{
-			// code...
+			echo __CLASS__ . ' instanciada';
 		}
 
-
-		public function modelo($modelo)
+		abstract public function exec()
 		{
-			require_once '../app/models/'.$modelo.'.php';
-			return new $modelo();
+			echo '<br>Ejecutando método exec()';
 		}
 
+		protected function render($controller_name = '', $params = array()){
+			$this->view = new View($controller_name, $params);
+		}
+		// public function modelo($modelo)
+		// {
+		// 	require_once '../app/models/'.$modelo.'.php';
+		// 	return new $modelo();
+		// }
 
-		public function view($vista, $datos = [])
-		{
-			if (file_exists('../app/views/'.$vista.'.php')){
-						require_once '../app/views/'.$vista.'.php';
-					} else {
-						die ('La vista no existe');
-					}
+
+		// public function view($vista, $datos = [])
+		// {
+		// 	if (file_exists('../app/views/'.$vista.'.php')){
+		// 				require_once '../app/views/'.$vista.'.php';
+		// 			} else {
+		// 				die ('La vista no existe');
+		// 			}
 			
-		}
+		// }
 	}
 
 

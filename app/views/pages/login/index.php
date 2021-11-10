@@ -12,11 +12,38 @@
  <div class="form">
       
       <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Únete</a></li>
         <li class="tab"><a href="#login">Iniciar sesión</a></li>
+        <li class="tab active"><a href="#signup">Únete</a></li>        
       </ul>
-      
       <div class="tab-content">
+      <div id="login">   
+          <h1>¡Bienvenido!</h1>
+          
+          <form action="<?php echo URL_PATH.'/LoginController/signin';?>" method="POST">
+          
+            <div class="field-wrap">
+            <!-- <label>
+              Correo electrónico<span class="req">*</span>
+            </label> -->
+            <input type="email"required autocomplete="off" placeholder="Correo electrónico" name="email" />
+          </div>
+          
+          <div class="field-wrap">
+            <!-- <label>
+              Contraseña<span class="req">*</span>
+            </label> -->
+            <input type="password" required autocomplete="off" placeholder="Ingrese su contraseña" name="password" />
+          </div>
+          
+          <p class="forgot"><a href="#">¿Olvidaste la contraseña?</a></p>
+          
+          <button class="button button-block" type="submit" />Iniciar sesión</button>
+          
+          </form>
+
+        </div>
+
+      
         <div id="signup">   
           <h1>Regístrate Gratis</h1>
           
@@ -71,32 +98,7 @@
 
         </div>
         
-        <div id="login">   
-          <h1>¡Bienvenido!</h1>
-          
-          <form action="<?php echo URL_PATH.'/LoginController/signin';?>" method="POST">
-          
-            <div class="field-wrap">
-            <!-- <label>
-              Correo electrónico<span class="req">*</span>
-            </label> -->
-            <input type="email"required autocomplete="off" placeholder="Correo electrónico" name="email" />
-          </div>
-          
-          <div class="field-wrap">
-            <!-- <label>
-              Contraseña<span class="req">*</span>
-            </label> -->
-            <input type="password" required autocomplete="off" placeholder="Ingrese su contraseña" name="password" />
-          </div>
-          
-          <p class="forgot"><a href="#">¿Olvidaste la contraseña?</a></p>
-          
-          <button class="button button-block" type="submit" />Iniciar sesión</button>
-          
-          </form>
-
-        </div>
+        
         
       </div><!-- tab-content -->
       

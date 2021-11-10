@@ -16,11 +16,7 @@
             $this->view('pages/home/index', $datos);
         }
 
-        public function articles()
-        {
-            // code...
-        }
-
+       
         public function update($num_register)
         {
             echo $num_register;
