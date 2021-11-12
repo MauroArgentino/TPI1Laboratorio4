@@ -1,7 +1,10 @@
 <?php
+
     class LoginController extends Controller {
+        
         public function __construct(){
-           $this->userModel = $this->modelo('Usuario');
+           //$this->userModel = $this->modelo('Usuario');
+            
         }
 
         public function index()
@@ -10,6 +13,17 @@
                 'titulo' => 'Que loco!'
             ];
             $this->view('pages/login/index', $datos);
+        }
+
+        public function show($param)
+        {
+            $params = array('titulo' => 'Login', 'parametro' => $param);
+            $this->render(__CLASS__, $params);
+        }
+
+        public function exec($param)
+        {
+            $this->show($param);
         }
 
         public function update($num_register)

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title><?php echo $datos['titulo'];?></title>
+        <title><?php echo $params['titulo'];?></title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="<?php echo URL_PATH;?>assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -15,6 +15,6 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"> -->
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="<?php echo URL_PATH;?>/css/login.css" rel="stylesheet" />
+        <link href="<?php echo URI;?>/css/login.css" rel="stylesheet" />
     </head>
     <body>

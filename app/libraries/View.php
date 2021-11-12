@@ -30,7 +30,18 @@ class View
 	}
 
 	protected function getContentTemplate($file_name){
-		
+		$file_path = ROOT.URI.PATH_VIEWS."/pages/$file_name/index.php";
+		if (is_file($file_path))
+		{
+			extract($this->params);
+			ob_start();
+			require($file_path);
+			$template = ob_get_contents();
+			ob_end_clean();
+			return $template;
+		} else {
+			throw new Exception("Error no existe {$file_path}");
+		}
 	}
 }
 

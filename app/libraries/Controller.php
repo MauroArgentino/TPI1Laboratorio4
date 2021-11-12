@@ -12,12 +12,12 @@
 			echo __CLASS__ . ' instanciada';
 		}
 
-		abstract public function exec()
-		{
-			echo '<br>Ejecutando método exec()';
-		}
+		abstract public function exec($param);
+		// {
+		// 	echo '<br>Ejecutando método exec()';
+		// }
 
-		protected function render($controller_name = '', $params = array()){
+		protected function render($controller_name = '', $params = []){
 			$this->view = new View($controller_name, $params);
 		}
 		// public function modelo($modelo)

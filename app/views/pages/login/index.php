@@ -8,12 +8,13 @@
  * para permitir que el almacenamento se amplíe a más de 60 caracteres (255 estaría bien)
  */
 //echo password_hash("mauro", PASSWORD_DEFAULT)."\n";
+var_dump($params);
 ?>
  <div class="form">
       
       <ul class="tab-group">
-        <li class="tab"><a href="#login">Iniciar sesión</a></li>
-        <li class="tab active"><a href="#signup">Únete</a></li>        
+        <li class="tab active"><a href="#login">Iniciar sesión</a></li>
+        <li class="tab"><a href="#signup">Únete</a></li>        
       </ul>
       <div class="tab-content">
       <div id="login">   
@@ -47,7 +48,7 @@
         <div id="signup">   
           <h1>Regístrate Gratis</h1>
           
-          <form action="<?php echo URL_PATH.'/LoginController/register';?>" method="POST">
+          <form action="<?php echo URL_PATH.'/Login/register';?>" method="POST">
           
           <div class="field-wrap">
            <!--  <label>
