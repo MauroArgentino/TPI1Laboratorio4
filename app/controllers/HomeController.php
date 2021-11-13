@@ -33,7 +33,18 @@
 
         public function show($param)
         {
-            $params = array('titulo' => 'Login', 'parametro' => $param, 'username' => $this->session->get('username'));
+            $params = array('titulo' => 'Login', 'parametro' => "juego", 'username' => $this->session->get('username'));
+            $this->render(__CLASS__, $params);
+        }
+
+        public function perfil($param)
+        {
+            $params = array('titulo' => 'Login', 'parametro' => "perfil", 'username' => $this->session->get('username'));
+            $this->render(__CLASS__, $params);
+        }
+
+        public function dashboard($param){
+            $params = array('titulo' => 'Login', 'parametro' => "dashboard", 'username' => $this->session->get('username'));
             $this->render(__CLASS__, $params);
         }
 

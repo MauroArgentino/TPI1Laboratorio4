@@ -15,15 +15,23 @@
          <input type="text" placeholder="Buscar...">
          <span class="tooltip">Buscar</span>
       </li> -->
+
       <li>
-        <a href="#">
+       <a href="<?php echo URL_PATH.'/home';?>">
+         <i class='bx bx-joystick' ></i>
+         <span class="links_name">Juego</span>
+       </a>
+       <span class="tooltip">Juego</span>
+     </li>
+      <li>
+        <a href="<?php echo URL_PATH.'/home/dashboard';?>">
           <i class='bx bx-grid-alt'></i>
           <span class="links_name">Dashboard</span>
         </a>
          <span class="tooltip">Dashboard</span>
       </li>
       <li>
-       <a href="#">
+       <a href="<?php echo URL_PATH.'/home/perfil';?>">
          <i class='bx bx-user' ></i>
          <span class="links_name">Perfil de usuario</span>
        </a>
@@ -88,112 +96,25 @@
     </ul>
   </div>
     <section class="home-section">
-     
-        <div id="tablero">
-        </div>
-
-        <br>
-
-        <div class="nuevo-juego" onclick="generarTablero()">
-            Nuevo Juego
-        </div>
-
+     <?php 
+      require_once '../app/views/inc/home/'.$parametro.'.php';
+       ?>
     </section>
     <!-- JS -->
     <!-- parte lógica -->
-    <script>
 
+    <?php if($parametro == "juego") {
+      ?>
+        <script src="<?php echo URL_PATH.'/js/juego.js';?>"></script>
+      <?php
+    }
+    ?>
+    <script>
+      
         // var error = 'Hubo un error en la conexion'; 
 
         // alert(error);
-        let imagenes = [];
-        let selecciones = [];
-        let contador = 0;
-
-        generarTablero();
-
-        function cargarIconos() {
-            imagenes = [
-                '<img src="<?php echo URL_PATH.'/img/Hacha.jpg';?>"></img>',
-                '<img src="<?php echo URL_PATH.'/img/Calabaza.jpg';?>"></img>',
-                '<img src="<?php echo URL_PATH.'/img/Dokuroizo.jpg';?>"></img>',
-                '<img src="<?php echo URL_PATH.'/img/Dragon.jpg';?>"></img>',
-                '<img src="<?php echo URL_PATH.'/img/Kuriboh.jpg';?>"></img>',
-                '<img src="<?php echo URL_PATH.'/img/Titiritero.jpg';?>"></img>',
-                '<img src="<?php echo URL_PATH.'/img/Zemia.jpg';?>"></img>',
-                '<img src="<?php echo URL_PATH.'/img/Beta.jpg';?>"></img>',
-                '<img src="<?php echo URL_PATH.'/img/Alpha.jpg';?>"></img>',
-                '<img src="<?php echo URL_PATH.'/img/Buey.jpg';?>"></img>',
-                '<img src="<?php echo URL_PATH.'/img/DragonN.jpg';?>"></img>',
-                '<img src="<?php echo URL_PATH.'/img/Craneo.jpg';?>"></img>',
-            ]
-        }
-
-        function generarTablero() {
-            cargarIconos()
-            selecciones = []
-            let tablero = document.getElementById("tablero")
-            let tarjetas = []
-            contador = 0;
-            for (let i = 0; i < 24; i++) {
-                tarjetas.push(`
-                <div class="area-tarjeta" onclick="seleccionarTarjeta(${i})">
-                    <div class="tarjeta" id="tarjeta${i}">
-                        <div class="cara trasera" id="trasera${i}">
-                            ${imagenes[0]}
-                        </div>
-                        <img src="<?php echo URL_PATH.'/img/Carta.jpg';?>" class="cara superior">
-                           <!-- <i class="far fa-question-circle"></i> -->
-                        </img>
-                    </div>
-                </div>        
-                `)
-                if (i % 2 == 1) {
-                    imagenes.splice(0, 1)
-                }
-            }
-            tarjetas.sort(() => Math.random() - 0.5)
-            tablero.innerHTML = tarjetas.join(" ")
-        }
-
-        function seleccionarTarjeta(i) {
-            let tarjeta = document.getElementById("tarjeta" + i)
-            if (tarjeta.style.transform != "rotateY(180deg)") {
-                tarjeta.style.transform = "rotateY(180deg)"
-                selecciones.push(i)
-            }
-            if (selecciones.length == 2) {
-                deseleccionar(selecciones)
-                selecciones = []
-            }
-        }
-
-        function deseleccionar(selecciones) {
-            setTimeout(() => {
-                let trasera1 = document.getElementById("trasera" + selecciones[0])
-                let trasera2 = document.getElementById("trasera" + selecciones[1])
-                if (trasera1.innerHTML != trasera2.innerHTML) {
-                    let tarjeta1 = document.getElementById("tarjeta" + selecciones[0])
-                    let tarjeta2 = document.getElementById("tarjeta" + selecciones[1])
-                    tarjeta1.style.transform = "rotateY(0deg)"
-                    tarjeta2.style.transform = "rotateY(0deg)"
-                }else{
-                    trasera1.style.display = "none"
-                    trasera2.style.display = "none"
-                    contador += 2;
-                    console.log(contador);
-                    if (contador == 24){
-                      Swal.fire(
-                        '¡Felicitaciones!',
-                        '¡Has Ganado!',
-                        'success'
-                              )
-                 }
-
-                }
-            }, 1000);
-        }
-
+       
         let sidebar = document.querySelector(".sidebar");
         let closeBtn = document.querySelector("#btn");
         let searchBtn = document.querySelector(".bx-search");

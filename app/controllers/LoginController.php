@@ -47,7 +47,7 @@
             // var_dump($result);
             // var_dump($this->loginModel->rowCount());
             if(!$this->loginModel->rowCount()){
-                return $this->renderErrorMessage("El email {$request_params['email']} no fue encontrad :(.", "error");
+                return $this->renderErrorMessage("El email {$request_params['email']} no fue encontrado :(.", "error");
             }
             if(!password_verify($request_params['password'], $result->PASSWORD)){
                 return $this->renderErrorMessage("El password es incorrecto", "error");
