@@ -8,8 +8,9 @@
  * para permitir que el almacenamento se amplíe a más de 60 caracteres (255 estaría bien)
  */
 //echo password_hash("mauro", PASSWORD_DEFAULT)."\n";
-var_dump($params);
+
 ?>
+
  <div class="form">
       
       <ul class="tab-group">
@@ -20,24 +21,24 @@ var_dump($params);
       <div id="login">   
           <h1>¡Bienvenido!</h1>
           
-          <form action="<?php echo URL_PATH.'/LoginController/signin';?>" method="POST">
+          <form action="<?php echo URL_PATH.'/Login/signin';?>" method="POST">
           
             <div class="field-wrap">
             <!-- <label>
               Correo electrónico<span class="req">*</span>
             </label> -->
-            <input type="email"required autocomplete="off" placeholder="Correo electrónico" name="email" />
+            <input type="email" autocomplete="off" placeholder="Correo electrónico" name="email" />
           </div>
           
           <div class="field-wrap">
             <!-- <label>
               Contraseña<span class="req">*</span>
             </label> -->
-            <input type="password" required autocomplete="off" placeholder="Ingrese su contraseña" name="password" />
+            <input type="password" autocomplete="off" placeholder="Ingrese su contraseña" name="password" />
           </div>
           
           <p class="forgot"><a href="#">¿Olvidaste la contraseña?</a></p>
-          
+          <!-- <?php !empty($error_message) ? print($error_message) : ''; ?> -->
           <button class="button button-block" type="submit" />Iniciar sesión</button>
           
           </form>
@@ -48,7 +49,7 @@ var_dump($params);
         <div id="signup">   
           <h1>Regístrate Gratis</h1>
           
-          <form action="<?php echo URL_PATH.'/Login/register';?>" method="POST">
+          <form action="<?php echo URL_PATH.'/Usuario/store';?>" method="POST">
           
           <div class="field-wrap">
            <!--  <label>

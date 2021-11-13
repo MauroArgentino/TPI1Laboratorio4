@@ -30,7 +30,8 @@ class View
 	}
 
 	protected function getContentTemplate($file_name){
-		$file_path = ROOT.URI.PATH_VIEWS."/pages/$file_name/index.php";
+		// $file_path = ROOT.URI.PATH_VIEWS."/pages/$file_name/index.php";
+		$file_path = ROOT.'/laboratorio4/tpi1/'.PATH_VIEWS."pages/$file_name/index.php";
 		if (is_file($file_path))
 		{
 			extract($this->params);

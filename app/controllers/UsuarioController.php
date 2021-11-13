@@ -3,13 +3,18 @@
 /**
  * 
  */
-class ClassName extends AnotherClass
+class UsuarioController extends Controller
 {
 	
-	function __construct(argument)
+	function __construct()
 	{
-		// code...
+		$this->userModel = $this->modelo('Usuario');
 	}
+
+    public function exec($param)
+    {
+        //
+    }
 
 	/**
      * Display a listing of the resource.
@@ -37,9 +42,20 @@ class ClassName extends AnotherClass
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($request)
     {
-        //
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $datos = [
+                "username" => trim($_POST["username"]),
+                "nombre" => trim($_POST["nombre"]),
+                "apellido" => trim($_POST["apellido"]),
+                "email" => trim($_POST["email"]),
+                "password" => trim($_POST["password"]),
+            ];
+            if ($this->userModel->createUser($datos)){
+                header("location: ".URL_PATH);
+            }
+        }
     }
 
     /**
@@ -50,7 +66,7 @@ class ClassName extends AnotherClass
      */
     public function show(Usuario $usuario)
     {
-        //
+        
     }
 
     /**

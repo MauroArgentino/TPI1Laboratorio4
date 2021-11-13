@@ -22,6 +22,6 @@
 
 	$controller->$metodo($param);
 
-	echo $_SERVER['REQUEST_URI'];
-	echo $_SERVER['DOCUMENT_ROOT'];
+	// echo $_SERVER['REQUEST_URI'];
+	// echo $_SERVER['DOCUMENT_ROOT'];
 ?>

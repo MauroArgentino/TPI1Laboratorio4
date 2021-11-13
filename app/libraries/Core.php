@@ -75,7 +75,12 @@
 
 		public function setParam()
 		{
-			$this->param = !empty($this->uri[5]) ? $this->uri[5] : '';
+			if(REQUEST_METHOD === 'POST'){
+				$this->param = $_POST;
+			} elseif (REQUEST_METHOD === 'GET') {
+				$this->param = !empty($this->uri[5]) ? $this->uri[5] : '';	
+			}
+			
 		}
 
 		public function getUri()

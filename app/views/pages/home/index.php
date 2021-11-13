@@ -24,7 +24,7 @@
         body {
             padding: 0;
             margin: 0;
-            -webkit-perspective: 1000;
+            /* -webkit-perspective: 1000; */
             background: #ffd90f;
             min-height: 50vh;
             display: flex;
@@ -441,13 +441,13 @@
        </a>
        <span class="tooltip">Setting</span>
      </li> -->
-     <a href="">
+     <a href="<?php echo URL_PATH.'/home/closeSession';?>">
      <li class="profile">
          <div class="profile-details">
-           <img src="<?php echo URL_PATH.'/img/Carta.jpg';?>" alt="profileImg">
+           <img src="<?php echo URL_PATH.'/img/Perfil.png';?>" alt="profileImg">
            <div class="name_job">
-             <div class="name">Prem Shahi</div>
-             <div class="job">Web designer</div>
+             <div class="name"><?php echo $username;?></div>
+             <!-- <div class="job">Web designer</div> -->
            </div>
          </div>
          
