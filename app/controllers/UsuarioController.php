@@ -75,9 +75,21 @@ class UsuarioController extends Controller
      * @param  \App\Models\Usuario  $usuario
      * @return \Illuminate\Http\Response
      */
-    public function edit(Usuario $usuario)
+    public function edit($request)
     {
-        //
+       if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $datos = [
+                "username" => trim($_POST["username"]),
+                "nombre" => trim($_POST["nombre"]),
+                "apellido" => trim($_POST["apellido"]),
+                "telefono" => trim($_POST["telefono"]),
+                "email" => trim($_POST["email"]),
+                "password" => trim($_POST["password"]),
+            ];
+            if ($this->userModel->updateUser($datos)){
+                header('location: '.URL_PATH.'/home/perfil');
+            }
+        }
     }
 
     /**

@@ -2,6 +2,7 @@
     class HomeController extends Controller {
 
         private $session;
+      
 
         public function __construct(){
             $this->usuarioModel = $this->modelo('Usuario');
@@ -39,11 +40,15 @@
 
         public function perfil($param)
         {
-            $params = array('titulo' => 'Login', 'parametro' => "perfil", 'username' => $this->session->get('username'));
+            // print_r($this->session->get('email'));
+            $usuario = $this->usuarioModel->getUser($this->session->get('email'));
+
+            $params = array('titulo' => 'Login', 'parametro' => "perfil", 'user' => $usuario);
             $this->render(__CLASS__, $params);
         }
 
         public function dashboard($param){
+
             $params = array('titulo' => 'Login', 'parametro' => "dashboard", 'username' => $this->session->get('username'));
             $this->render(__CLASS__, $params);
         }

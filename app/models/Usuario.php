@@ -53,6 +53,37 @@ class Usuario extends Model
 		
 	}
 
+	public function updateUser($datos)
+	{
+		try {
+			// $this->db->query("UPDATE usuarios SET username = :username, nombre = :nombre, apellido = :apellido, password = :password
+			// 	WHERE email = :email;");
+			
+			if (!empty($datos->password)){
+				$this->db->query("UPDATE usuarios SET username = :username, nombre = :nombre, apellido = :apellido, password = :password, telefono = :telefono WHERE email = :email;");
+				$this->db->bind(":password", password_hash($datos["password"], PASSWORD_DEFAULT));
+			} else {
+				$this->db->query("UPDATE usuarios SET username = :username, nombre = :nombre, apellido = :apellido, telefono = :telefono WHERE email = :email;");
+			}
+			$this->db->bind(":username", $datos["username"]);
+			$this->db->bind(":nombre", $datos["nombre"]);
+			$this->db->bind(":apellido", $datos["apellido"]);
+			$this->db->bind(":telefono", $datos["telefono"]);
+			$this->db->bind(":email", $datos["email"]);
+			return $this->db->execute();
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+		
+	}
+
+	public function getUser($email)
+	{
+		$this->db->query("SELECT * FROM usuarios WHERE email = :email");
+		$this->db->bind(":email", $email);
+		return $this->db->register();
+	}
+
 }
 
 ?>
