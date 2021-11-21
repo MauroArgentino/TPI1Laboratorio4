@@ -17,18 +17,34 @@
 CREATE DATABASE IF NOT EXISTS `memogame` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `memogame`;
 
+-- Volcando estructura para tabla memogame.partidas
+DROP TABLE IF EXISTS `partidas`;
+CREATE TABLE IF NOT EXISTS `partidas` (
+  `ID_USUARIO` int(11) unsigned NOT NULL,
+  `ID_PARTIDA` int(11) unsigned NOT NULL,
+  `TIEMPO` int(11) DEFAULT NULL,
+  `INTENTOS` int(11) DEFAULT NULL,
+  `FECHA` datetime DEFAULT NULL,
+  PRIMARY KEY (`ID_USUARIO`,`ID_PARTIDA`),
+  CONSTRAINT `FK_partidas_usuarios` FOREIGN KEY (`ID_USUARIO`) REFERENCES `usuarios` (`ID_USUARIO`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- La exportación de datos fue deseleccionada.
+
 -- Volcando estructura para tabla memogame.usuarios
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
-  `ID_USUARIO` int(11) NOT NULL AUTO_INCREMENT,
-  `USERNAME` varchar(50) NOT NULL DEFAULT '',
-  `NOMBRE` varchar(50) NOT NULL DEFAULT '',
-  `APELLIDO` varchar(50) NOT NULL DEFAULT '',
-  `EMAIL` varchar(120) NOT NULL DEFAULT '',
-  `PASSWORD` varchar(255) NOT NULL DEFAULT '',
+  `ID_USUARIO` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `USERNAME` varchar(50) NOT NULL,
+  `NOMBRE` varchar(50) NOT NULL,
+  `APELLIDO` varchar(50) NOT NULL,
+  `EMAIL` varchar(120) NOT NULL,
+  `PASSWORD` varchar(255) NOT NULL,
   `TELEFONO` varchar(50) DEFAULT NULL,
+  `URL_AVATAR` varchar(1200) DEFAULT NULL,
   PRIMARY KEY (`ID_USUARIO`),
-  UNIQUE KEY `EMAIL` (`EMAIL`)
+  UNIQUE KEY `EMAIL` (`EMAIL`),
+  UNIQUE KEY `USERNAME` (`USERNAME`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- La exportación de datos fue deseleccionada.

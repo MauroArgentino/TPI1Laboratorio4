@@ -62,6 +62,7 @@ class Usuario extends Model
 			if (!empty($datos->password)){
 				$this->db->query("UPDATE usuarios SET username = :username, nombre = :nombre, apellido = :apellido, password = :password, telefono = :telefono WHERE email = :email;");
 				$this->db->bind(":password", password_hash($datos["password"], PASSWORD_DEFAULT));
+				die();
 			} else {
 				$this->db->query("UPDATE usuarios SET username = :username, nombre = :nombre, apellido = :apellido, telefono = :telefono WHERE email = :email;");
 			}

@@ -24,12 +24,12 @@
                         <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">What would you be using Flinks for?<span class="text-danger"> *</span></label> <input type="text" id="ans" name="ans" placeholder=""> </div>
                     </div>
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Constraseña<span class="text-danger"> *</span></label> <input type="text" id="mob" name="password" placeholder="" > </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Repita constraseña<span class="text-danger"> *</span></label> <input type="text" id="mob" name="mob" placeholder="" > </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Constraseña<span class="text-danger"> *</span></label> <input type="password" id="mob" name="password" placeholder="" > </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Repita constraseña<span class="text-danger"> *</span></label> <input type="text" id="mob" name="password-repeat" placeholder="" > </div>
                     </div>
 
                     <div class="row justify-content-between text-left" hidden>
-                        <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">What would you be using Flinks for?<span class="text-danger"> *</span></label> <input type="text" id="ans" name="email" placeholder="" value="<?= $user->EMAIL; ?>"> </div>
+                        <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">What would you be using Flinks for?<span class="text-danger"> *</span></label> <input type="password" id="ans" name="email" placeholder="" value="<?= $user->EMAIL; ?>"> </div>
                     </div>
                     <div class="row justify-content-end">
                         <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary">Guardar cambios</button> </div>
