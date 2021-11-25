@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versión del servidor:         10.4.21-MariaDB - mariadb.org binary distribution
+-- Versión del servidor:         10.4.17-MariaDB - mariadb.org binary distribution
 -- SO del servidor:              Win64
--- HeidiSQL Versión:             11.3.0.6295
+-- HeidiSQL Versión:             11.2.0.6213
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -18,7 +18,6 @@ CREATE DATABASE IF NOT EXISTS `memogame` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `memogame`;
 
 -- Volcando estructura para tabla memogame.partidas
-DROP TABLE IF EXISTS `partidas`;
 CREATE TABLE IF NOT EXISTS `partidas` (
   `ID_USUARIO` int(11) unsigned NOT NULL,
   `ID_PARTIDA` int(11) unsigned NOT NULL,
@@ -32,7 +31,6 @@ CREATE TABLE IF NOT EXISTS `partidas` (
 -- La exportación de datos fue deseleccionada.
 
 -- Volcando estructura para tabla memogame.usuarios
-DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `ID_USUARIO` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `USERNAME` varchar(50) NOT NULL,
@@ -45,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   PRIMARY KEY (`ID_USUARIO`),
   UNIQUE KEY `EMAIL` (`EMAIL`),
   UNIQUE KEY `USERNAME` (`USERNAME`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- La exportación de datos fue deseleccionada.
 

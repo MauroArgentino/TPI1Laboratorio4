@@ -29,7 +29,7 @@ function generarTablero() {
     contador = 0;
     for (let i = 0; i < 24; i++) {
         tarjetas.push(`
-        <div class="area-tarjeta" id="Carta${i}" onclick="seleccionarTarjeta(${i})">
+        <div class="area-tarjeta" onclick="seleccionarTarjeta(${i})">
             <div class="tarjeta" id="tarjeta${i}">
                 <div class="cara trasera" id="trasera${i}">
                     ${imagenes[0]}
@@ -73,45 +73,15 @@ function deseleccionar(selecciones) {
             trasera1.style.display = "none"
             trasera2.style.display = "none"
             contador += 2;
-            let Carta1 = document.getElementById("Carta" + selecciones[0])
-            let Carta2 = document.getElementById("Carta" + selecciones[1])
-            document.getElementById("Carta" + selecciones[0]).removeAttribute("onclick");
-            document.getElementById("Carta" + selecciones[1]).removeAttribute("onclick");
-            document.getElementById("Carta" + selecciones[0]).style.cursor = "default";
-            document.getElementById("Carta" + selecciones[1]).style.cursor = "default";
             console.log(contador);
             if (contador == 24){
-                clearInterval(counter);
-                
               Swal.fire(
                 '¡Felicitaciones!',
                 '¡Has Ganado!',
                 'success'
-                      );
+                      )
          }
 
         }
     }, 1000);
-}
-
-var count = 10000;
-
-var counter = setInterval(timer, 10); //10 will  run it every 100th of a second
-
-function removerOnClick(carta1, carta2){
-    console.log("Remueve");
-    document.getElementsByClassName('area-tarjeta').removeAttribute("onclick");
-    document.getElementsByClassName('area-tarjeta').removeAttribute("onclick");
-}
-
-function timer()
-{
-    if (count <= 0)
-    {
-        clearInterval(counter);
-        removerOnClick();
-        return;
-     }
-     count--;
-     document.getElementById("timer").innerHTML = parseFloat(count /100).toFixed(2); 
 }

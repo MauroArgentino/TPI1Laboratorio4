@@ -417,20 +417,3 @@ button:focus {
     box-shadow: none !important;
     outline-width: 0
 }
-
-#timer {
-padding: 0px;
- margin: 0px;
-}
-
-#labelTiempo {
-    font-size: 14px;
-    color: red;
-}
-
-#cardTimer {
-    margin: 0px;
-    margin-top: 20px;
-    padding: 0px;
-    width: 200px;
-}
